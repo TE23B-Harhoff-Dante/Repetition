@@ -1,20 +1,46 @@
-﻿Fight();
+﻿using System.Runtime.CompilerServices;
+
+Fight();
 
 static void Fight()
 {
 
-    int p1Hp = 100;
-    int p2Hp = 100;
+    int d1 = 0;
+    int d2 = 0;
 
-    string p1Name = "Alex";
-    string p2Name = "Calin";
+    while (d1 < 1 && d1 > 30)
+    {
+        Console.WriteLine("hur stark är din champion (1-30) ");
+        string pD1 = Console.ReadLine();
+        int.TryParse(pD1, out d1);
+    }
+
+    while (d2 < 1 && d2 > 30)
+    {
+        Console.WriteLine("hur stark är din opp (1-30) ");
+        string pD2 = Console.ReadLine();
+        int.TryParse(pD2, out d2);
+    }
+
+    Console.WriteLine("Vad heter din champion?");
+    string p1Name = Console.ReadLine();
+    Console.WriteLine("Vad heter din opp?");
+    string p2Name = Console.ReadLine();
+
+    int p1Hp = 100 - 2 * d1;
+    int p2Hp = 100 - 2 * d2;
 
     Console.WriteLine($"{p1Name} {p1Hp}");
     Console.WriteLine($"{p2Name} {p2Hp}");
+
+
+
+
+
     while (p1Hp > 0 && p2Hp > 0)
     {
-        p2Hp -= Random.Shared.Next(5, 25); // Alex slår Calin
-        p1Hp -= Random.Shared.Next(5, 25); // Calin slår Alex
+        p2Hp -= Random.Shared.Next(5, d1); // p1 slår Calin
+        p1Hp -= Random.Shared.Next(5, d2); // Calin slår p1
         Console.WriteLine($"{p1Name} {p1Hp}");
         Console.WriteLine($"{p2Name} {p2Hp}");
         Console.ReadLine();
