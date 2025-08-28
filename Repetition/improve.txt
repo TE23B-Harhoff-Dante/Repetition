@@ -1,0 +1,11 @@
+- se hur mucket skada som gör
+- Välja eget namn
+- Välja olika attacker
+- välja olika vapen
+- välja klass för karaktär
+- debuffs (stun, förgiftning)
+- flera strider (starta om)
+- xp, levels
+- butik, pengar
+- slump vem som börjar
+- utrustning
